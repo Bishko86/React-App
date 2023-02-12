@@ -1,0 +1,9 @@
+@import "./../../styles/variables/colors.scss";
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  color: aliceblue;
+  background-color: $background-dark;
+}

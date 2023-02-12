@@ -1,0 +1,32 @@
+@import "./../../styles/variables/colors.scss";
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: antiquewhite;
+  height: 100%;
+  width: 62px;
+  background-color: $background-dark;
+  padding: 24px 12px 24px 12px;
+  box-sizing: border-box;
+  transition: 0.4s;
+  box-shadow: -1px 0 5px 1px $shadow;
+  z-index: 2;
+}
+
+.sidebarOpened {
+  width: 312px;
+}
+
+.open-close {
+  cursor: pointer;
+  padding: 4px;
+  text-align: center;
+}
+
+.open-close:hover {
+  color: rgb(240, 211, 173);
+  background-color: rgb(34, 36, 40);
+  border-radius: 4px;
+}

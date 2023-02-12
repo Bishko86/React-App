@@ -1,0 +1,11 @@
+@import "./../../styles/variables/colors.scss";
+
+footer {
+  background-color: $background-dark;
+  padding: 12px;
+  text-align: center;
+
+  .footer-text {
+    color: $secondary-dark-blue-50;
+  }
+}
