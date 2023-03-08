@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { ChevronsRight } from 'react-feather';
 import classNames from "classnames";
 
 import "./Sidebar.scss";
@@ -19,8 +20,8 @@ export default function Sidebar(): JSX.Element {
     >
       <div className="logo">Logo</div>
       <div className="items"></div>
-      <div className="open-close" onClick={toogleSidebar}>
-        {">>"}
+      <div className="open-close">
+      <ChevronsRight className="icon" onClick={toogleSidebar}/>
       </div>
     </div>
   );

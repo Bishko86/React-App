@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: antiquewhite;
+  color: $secondary-dark-blue-45;
   height: 100%;
   width: 62px;
   background-color: $background-dark;
@@ -17,16 +17,19 @@
 
 .sidebarOpened {
   width: 312px;
+
+  .open-close {
+    rotate: 180deg;
+    display: flex;
+  }
 }
 
 .open-close {
-  cursor: pointer;
   padding: 4px;
-  text-align: center;
-}
+  text-align: right;
 
-.open-close:hover {
-  color: rgb(240, 211, 173);
-  background-color: rgb(34, 36, 40);
-  border-radius: 4px;
+  .icon:hover {
+    color: $secondary-dark-blue-30;
+    cursor: pointer;
+  }
 }
