@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-import { ChevronsRight } from 'react-feather';
+import { ReactSVG } from "react-svg";
 import classNames from "classnames";
 
 import "./Sidebar.scss";
+import { SidebarItemsContainer } from "./Containers/SidebarItemsContainer";
 
 export default function Sidebar(): JSX.Element {
   const [sidebarState, setSidevarState] = useState(false);
@@ -19,9 +20,9 @@ export default function Sidebar(): JSX.Element {
       })}
     >
       <div className="logo">Logo</div>
-      <div className="items"></div>
+      <div className="items"><SidebarItemsContainer /></div>
       <div className="open-close">
-      <ChevronsRight className="icon" onClick={toogleSidebar}/>
+      <ReactSVG src="./icons/sidebar.svg" className="icon" onClick={toogleSidebar}/>
       </div>
     </div>
   );

@@ -17,16 +17,10 @@
 
 .sidebarOpened {
   width: 312px;
-
-  .open-close {
-    rotate: 180deg;
-    display: flex;
-  }
 }
 
 .open-close {
   padding: 4px;
-  text-align: right;
 
   .icon:hover {
     color: $secondary-dark-blue-30;
