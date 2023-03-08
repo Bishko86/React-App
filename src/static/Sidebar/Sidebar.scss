@@ -13,6 +13,10 @@
   transition: 0.4s;
   box-shadow: -1px 0 5px 1px $shadow;
   z-index: 2;
+
+  .items {
+    margin-top: 50px;
+  }
 }
 
 .sidebarOpened {
@@ -20,10 +24,11 @@
 }
 
 .open-close {
-  padding: 4px;
+  display: flex;
+  column-gap: 18px;
+  cursor: pointer;
 
   .icon:hover {
     color: $secondary-dark-blue-30;
-    cursor: pointer;
   }
 }

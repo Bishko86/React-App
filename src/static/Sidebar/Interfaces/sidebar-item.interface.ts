@@ -6,3 +6,7 @@ export interface SidebarItemModel {
   icon: any;
   children: unknown[];
 }
+
+export interface SidebarItemProps extends SidebarItemModel {
+  isOpened: boolean;
+}
