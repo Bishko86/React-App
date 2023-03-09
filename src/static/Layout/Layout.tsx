@@ -11,9 +11,7 @@ const Layout = () => {
   };
   return (
     <div className="main-container">
-      {/* <div className="sidebar"> */}
       <Sidebar />
-      {/* </div> */}
       <div className="content">
         <Header />
         <Content />
