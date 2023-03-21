@@ -4,6 +4,7 @@ export interface SidebarItemModel {
   id: number;
   text: SidebarTitles;
   icon: any;
+  link: string;
   children: unknown[];
 }
 

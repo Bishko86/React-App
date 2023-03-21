@@ -7,8 +7,6 @@ import "./SidebarItemsContainer.scss";
 export const SidebarItemsContainer: React.FC<{ isOpened: boolean }> = ({
   isOpened,
 }): JSX.Element => {
-  console.error(isOpened);
-
   const sidebarItems = SidebarItems.map((item) => (
     <SidebarItem {...item} isOpened={isOpened} key={item.id} />
   ));

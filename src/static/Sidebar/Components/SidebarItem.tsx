@@ -1,5 +1,7 @@
 import React from "react";
 
+import { NavLink } from "react-router-dom";
+
 import { ReactSVG } from "react-svg";
 
 import "./SidebarItem.scss";
@@ -9,12 +11,19 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
   text,
   icon,
   isOpened,
+  link,
 }): JSX.Element => {
-  const url = `./icons/${icon}.svg`;
+  const url = `/icons/${icon}.svg`;
   return (
-    <div className="sidebar-item">
+    <NavLink
+      to={link}
+      className="sidebar-item"
+      style={({ isActive }) => ({
+        color: isActive ? "var(--primary-active-blue-80)" : "var(--primary-active-blue-20)",
+      })}
+    >
       <ReactSVG src={url} />
       {isOpened && <span>{text}</span>}
-    </div>
+    </NavLink>
   );
 };

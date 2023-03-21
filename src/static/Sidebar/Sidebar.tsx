@@ -26,7 +26,7 @@ export default function Sidebar(): JSX.Element {
         </div>
       </div>
       <div className="open-close" onClick={toogleSidebar}>
-        <ReactSVG src="./icons/sidebar.svg" className="icon" />
+        <ReactSVG src="/icons/sidebar.svg" className="icon" />
         {sidebarState && <span>Collapse</span>}
       </div>
     </div>
