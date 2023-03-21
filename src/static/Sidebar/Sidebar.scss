@@ -1,0 +1,34 @@
+@import "./../../styles/variables/colors.scss";
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: $secondary-dark-blue-45;
+  height: 100%;
+  width: 62px;
+  background-color: $background-dark;
+  padding: 24px 12px 24px 12px;
+  box-sizing: border-box;
+  transition: 0.4s;
+  box-shadow: -1px 0 5px 1px $shadow;
+  z-index: 2;
+
+  .items {
+    margin-top: 50px;
+  }
+}
+
+.sidebarOpened {
+  width: 312px;
+}
+
+.open-close {
+  display: flex;
+  column-gap: 18px;
+  cursor: pointer;
+
+  .icon:hover {
+    color: $secondary-dark-blue-30;
+  }
+}
