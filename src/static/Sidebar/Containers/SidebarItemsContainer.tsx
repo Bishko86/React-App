@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SidebarItem } from "../Components/SidebarItem";
+import { SidebarItem } from "../Components/SidebarItem/SidebarItem";
 import { SidebarItems } from "../Constants/sidebar-items.constant";
 import "./SidebarItemsContainer.scss";
 

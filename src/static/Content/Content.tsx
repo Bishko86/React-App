@@ -1,10 +1,11 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 import "./Content.scss";
 
 export default function Content(): JSX.Element {
+  const { state } = useNavigation();
   return (
     <main>
-      <Outlet />
+      {state === "loading" ? <div role="loader"> Loading </div> : <Outlet />}
     </main>
   );
 }

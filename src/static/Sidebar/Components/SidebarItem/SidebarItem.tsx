@@ -5,7 +5,8 @@ import { NavLink } from "react-router-dom";
 import { ReactSVG } from "react-svg";
 
 import "./SidebarItem.scss";
-import { SidebarItemProps } from "../Interfaces/sidebar-item.interface";
+import { SidebarItemProps } from "../../Interfaces/sidebar-item.interface";
+import { useTranslation } from "react-i18next";
 
 export const SidebarItem: React.FC<SidebarItemProps> = ({
   text,
@@ -13,6 +14,7 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
   isOpened,
   link,
 }): JSX.Element => {
+  const { t } = useTranslation();
   const url = `/icons/${icon}.svg`;
   return (
     <NavLink
@@ -23,7 +25,7 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
       })}
     >
       <ReactSVG src={url} />
-      {isOpened && <span>{text}</span>}
+      {isOpened && <span>{t(text)}</span>}
     </NavLink>
   );
 };
