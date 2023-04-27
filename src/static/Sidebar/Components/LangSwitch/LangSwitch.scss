@@ -1,0 +1,10 @@
+.lng-switch {
+  display: flex;
+  column-gap: 15px;
+
+  .chevron {
+    display: inline-block;
+    cursor: pointer;
+    transform: rotate(90deg);
+  }
+}

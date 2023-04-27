@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <About /> },
-      { path: Routes.SQUARE, element: <Square />, loader: fetchData },
+      { path: Routes.SQUARE, element: <Square />, loader: fetchData},
       { path: Routes.TODO, element: <TodoList /> },
       { path: Routes.SETTINGS, element: <Settings /> },
     ],
