@@ -26,7 +26,7 @@ export default function Sidebar(): JSX.Element {
           <SidebarItemsContainer isOpened={sidebarState} />
         </div>
       </div>
-      <LanguageSwitcher />
+      <LanguageSwitcher isOpened={sidebarState} />
       <div className="open-close" onClick={toogleSidebar}>
         <ReactSVG src="/icons/sidebar.svg" className="icon" />
         {sidebarState && <span>Collapse</span>}
