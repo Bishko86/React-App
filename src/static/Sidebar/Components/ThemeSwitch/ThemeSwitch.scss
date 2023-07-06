@@ -1,0 +1,65 @@
+@import "styles/variables/theme-variables";
+@import "styles/variables/colors";
+
+.toggle-btn-section {
+  margin: auto 0 auto 0;
+
+  .toggle-checkbox {
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+
+    .toggle-btn__input {
+      height: 0;
+      width: 0;
+      visibility: hidden;
+      margin: 0;
+    }
+
+    .toggle-btn__input-label {
+      cursor: pointer;
+      width: 38px;
+      height: 20px;
+      display: block;
+      border-radius: 23px;
+      position: relative;
+      border: none;
+      margin-top: 2px;
+
+      @include themify($themes) {
+        background-color: themed('toggleBackground');
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        transition: 0.3s;
+        box-shadow: 0 5px 10px $secondary-dark-blue-20;
+        background-color: $white;
+      }
+    }
+
+    .toggle-btn__input:checked~.toggle-btn__input-label {
+      &:after {
+        background: $white;
+        left: calc(100% - 3px);
+        transform: translateX(-100%);
+      }
+    }
+
+    .toggle-btn__input:checked~.toggle-btn__theme {
+      &:after {
+        // theme switch circle background in light theme
+        background: $white;
+        left: calc(100% - 3px);
+        transform: translateX(-100%);
+      }
+    }
+  }
+}

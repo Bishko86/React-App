@@ -6,6 +6,7 @@ import classNames from "classnames";
 import "./Sidebar.scss";
 import { SidebarItemsContainer } from "./Containers/SidebarItemsContainer";
 import { LanguageSwitcher } from "./Components/LangSwitch/LangSwitch";
+import { ThemeSwitch } from "./Components/ThemeSwitch/ThemeSwitch";
 
 export default function Sidebar(): JSX.Element {
   const [sidebarState, setSidevarState] = useState(false);
@@ -27,6 +28,7 @@ export default function Sidebar(): JSX.Element {
         </div>
       </div>
       <LanguageSwitcher isOpened={sidebarState} />
+      <ThemeSwitch />
       <div className="open-close" onClick={toogleSidebar}>
         <ReactSVG src="/icons/sidebar.svg" className="icon" />
         {sidebarState && <span>Collapse</span>}
