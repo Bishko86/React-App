@@ -1,0 +1,53 @@
+@import 'styles/variables/colors';
+
+.todo {
+  display: flex;
+  flex-direction: column;
+  row-gap: 18px;
+
+  &__add-wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+  }
+
+  &__add {
+    font-size: 32px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  &__field {
+    width: 400px;
+    height: 24px;
+  }
+
+  &__checkmark {
+    color: $primary-active-blue-15;
+  }
+
+  &__paginator {
+    display: flex;
+    column-gap: 10px;
+    cursor: pointer;
+  }
+
+  &__page {
+    padding: 0 6px;
+    color: $secondary-dark-blue-10;
+    border: 1px solid $secondary-dark-blue-10;
+    border-radius: 50%;
+  }
+
+  &__active {
+    color: $primary-active-blue-15;
+    border-color: $primary-active-blue-15;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    min-height: 200px;
+  }
+}

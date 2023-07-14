@@ -1,0 +1,25 @@
+@import 'styles/variables/colors';
+
+.todo {
+  &__item {
+    display: flex;
+    column-gap: 24px;
+  }
+
+  &__task {
+    width: 60%;
+  }
+
+  &__task__done {
+    text-decoration: line-through;
+  }
+
+  &__created-at {
+    width: 30%;
+  }
+
+  &__delete {
+    cursor: pointer;
+    color: $supportive-red-00;
+  }
+}
