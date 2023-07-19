@@ -1,9 +1,12 @@
 import { RouterProvider } from "react-router-dom";
+import { useMemo, useState } from "react";
+
 import "./App.scss";
+
 import { router } from "./router";
 import { ThemeContext } from "./core/contexts/theme.context";
-import { useMemo, useState } from "react";
 import { Theme } from 'core/enums';
+import { ModalProvider } from 'core/contexts';
 
 
 function App() {
@@ -15,13 +18,17 @@ function App() {
   };
 
   const [theme, setTheme] = useState(getDefaultTheme());
+
   const contextValue = useMemo(() => ({ theme, setTheme }), [theme, setTheme]);
 
   return (
     <ThemeContext.Provider value={contextValue}>
-      <div className={`App theme-${theme}`}>
-        <RouterProvider router={router} fallbackElement={<>LOADING...</>} />
-      </div>
+      <ModalProvider>
+        <div className={`App theme-${theme}`}>
+          <RouterProvider router={router} fallbackElement={<>LOADING...</>} />
+        </div>
+      </ModalProvider>
+
     </ThemeContext.Provider>
   );
 }

@@ -1,5 +1,5 @@
 export enum SidebarTitles {
   DECART_SQUARE = 'descartes-square',
-  TODO_LIST = 'to-do',
+  TODO_LIST = 'todo.todo',
   SETTINGS = 'settings',
 };
