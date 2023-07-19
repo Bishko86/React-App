@@ -7,15 +7,16 @@
   }
 
   &__task {
-    width: 60%;
+    width: 40%;
   }
 
   &__task__done {
     text-decoration: line-through;
   }
 
+  &__due-date,
   &__created-at {
-    width: 30%;
+    width: 25%;
   }
 
   &__delete {

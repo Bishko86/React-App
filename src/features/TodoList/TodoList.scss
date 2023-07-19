@@ -15,6 +15,14 @@
     font-size: 32px;
     font-weight: 600;
     cursor: pointer;
+    display: flex;
+    column-gap: 8px;
+  }
+
+  &__add-text {
+    font-size: 20px;
+    font-weight: 400;
+    align-self: center;
   }
 
   &__field {
@@ -49,5 +57,31 @@
     flex-direction: column;
     row-gap: 20px;
     min-height: 200px;
+    padding: 24px;
+    background-color: $secondary-dark-blue-40;
+  }
+
+  &__empty {
+    text-align: center;
+  }
+
+  &__table-header {
+    display: flex;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $secondary-dark-blue-10;
+    font-family: Arial, sans-serif;
+  }
+
+  &__header-item {
+    width: 25%;
+
+    &:first-child {
+      margin: auto 5px auto 45px;
+      width: 41%;
+    }
+
+    &:last-child {
+      margin-left: 15px;
+    }
   }
 }

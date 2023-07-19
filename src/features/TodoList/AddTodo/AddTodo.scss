@@ -1,0 +1,35 @@
+@import 'styles/variables/colors';
+
+.add-todo {
+  padding: 18px;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+
+    input[type="text"] {
+      height: 30px;
+      width: 300px;
+    }
+    input[type="date"] {
+      height: 32px;
+      width: 303px;
+    }
+
+    input[type="submit"] {
+      width: 100px;
+      height: 30px;
+    }
+
+    input {
+      border-width: 1px;
+      border-radius: 4px;
+      padding: 0 15px;
+    }
+
+    label {
+      padding-bottom: 4px;
+    }
+  }
+}
