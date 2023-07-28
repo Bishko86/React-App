@@ -8,4 +8,8 @@ export class DateTimeHelper {
       return ''
     }
   }
+
+  static setDateTime(date: number, hours: number, min: number, sec: number): number {
+    return new Date(date).setHours(hours, min, sec);
+  }
 }

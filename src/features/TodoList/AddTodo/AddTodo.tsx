@@ -6,8 +6,8 @@ import { useTranslation } from 'react-i18next';
 import { ErrorMessage } from 'shared/ErrorMessage/ErrorMessage';
 
 
-export const AddTodo: FC<{ saveTodo: (formdata: TodoFormData) => Promise<string | Todo> }> = ({ saveTodo }): JSX.Element => {
-  const [formData, setFormData] = useState<TodoFormData>({ text: "", dueDate: Date.now(), invalid: false });
+export const AddTodo: FC<{modalData?: Todo, saveTodo: (formdata: TodoFormData) => void }> = ({ saveTodo, modalData }): JSX.Element => {
+  const [formData, setFormData] = useState<TodoFormData>({ todo: modalData?.todo ?? "", dueDate: modalData?.dueDate ?? Date.now(), invalid: false });
   const { t } = useTranslation();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -17,16 +17,13 @@ export const AddTodo: FC<{ saveTodo: (formdata: TodoFormData) => Promise<string 
 
   const saveFormData = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!formData.text.trim().length) {
+    if (!formData.todo.trim().length) {
       setFormData((prevFormData) => ({ ...prevFormData, invalid: true }));
-      console.error(formData);
-
       return;
     }
 
-    saveTodo(formData).then((data) => {
-      console.error(data);
-    });
+    saveTodo({...(!!modalData && modalData), ...formData});
+    setFormData({todo: "", dueDate: Date.now(), invalid: false});
   }
   const formattedDueDate = new Date(formData.dueDate).toJSON().slice(0, 10);
 
@@ -35,7 +32,7 @@ export const AddTodo: FC<{ saveTodo: (formdata: TodoFormData) => Promise<string 
       <form className="add-todo__form" onSubmit={(e) => saveFormData(e)}>
         <div className="input-container">
           <label htmlFor="text">{t('todo.text')}: <span className="required">*</span></label>
-          <input type="text" id="text" name="text" value={formData.text} onChange={handleChange} />
+          <input type="text" id="todo" name="todo" value={formData.todo} onChange={handleChange} />
           {formData.invalid && <ErrorMessage message={t('required')} />}
         </div>
         <div className="input-container">

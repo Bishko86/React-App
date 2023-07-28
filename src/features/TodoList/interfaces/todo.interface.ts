@@ -4,4 +4,5 @@ export interface Todo {
   createdAt: number;
   checked: boolean;
   dueDate: number;
+  expired: boolean;
 }

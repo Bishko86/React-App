@@ -4,14 +4,20 @@ import { ModalProviderProps } from 'core/interfaces';
 
 const ModalContext = createContext({
   isModalOpen: false,
-  openModal: () => { },
+  modalData: null as unknown,
+  openModal: (modalData?: unknown) => { },
   closeModal: () => { }
 });
 
 const ModalProvider: React.FC<ModalProviderProps> = ({ children }): JSX.Element => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [modalData, setModalData] = useState<unknown>(null);
 
-  const openModal = useCallback(() => {
+  const openModal = useCallback((data: unknown) => {
+    if (data) {
+      setModalData(data);
+    }
+
     setIsModalOpen(true);
   }, []);
 
@@ -19,7 +25,7 @@ const ModalProvider: React.FC<ModalProviderProps> = ({ children }): JSX.Element 
     setIsModalOpen(false);
   }, []);
   
-  const contextValue = useMemo(() => ({ isModalOpen, openModal, closeModal }), [isModalOpen, openModal, closeModal]);
+  const contextValue = useMemo(() => ({modalData, isModalOpen, openModal, closeModal }), [modalData, isModalOpen, openModal, closeModal]);
 
   return (
     <ModalContext.Provider value={contextValue}>

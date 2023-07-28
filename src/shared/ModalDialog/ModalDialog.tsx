@@ -1,14 +1,13 @@
 import { ModalContext } from 'core/contexts';
 import { ModalProviderProps } from 'core/interfaces';
-import { useContext } from 'react';
+import React, { JSXElementConstructor, ReactElement, ReactNode, useContext } from 'react';
 
 import './ModalDialog.scss';
 import { ReactSVG } from 'react-svg';
 
 export const ModalDialog: React.FC<ModalProviderProps> = ({ children, title }) => {
-  const { isModalOpen, closeModal } = useContext(ModalContext);
+  const { isModalOpen, closeModal, modalData } = useContext(ModalContext);
   const url = `/icons/close-icon.svg`;
-
   return isModalOpen
     ? (
       <div className="modal">
@@ -20,7 +19,11 @@ export const ModalDialog: React.FC<ModalProviderProps> = ({ children, title }) =
             </span>
           </div>
           <div className="modal__content">
-            {children}
+            {React.Children.map(children, (child) => {
+              return React.cloneElement(child as ReactElement<any, string | JSXElementConstructor<any>>, {
+                modalData: modalData
+              });
+            })}
           </div>
         </div>
       </div>
