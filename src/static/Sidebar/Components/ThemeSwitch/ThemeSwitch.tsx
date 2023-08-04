@@ -1,4 +1,4 @@
-import { FC, useContext } from "react";
+import React, { FC, useContext } from "react";
 
 import "./ThemeSwitch.scss";
 import { ThemeContext } from 'core/contexts';
@@ -11,7 +11,7 @@ export const ThemeSwitch: FC = (): JSX.Element => {
   const handleThemeChange = () => {
     const isCurrentDark = theme === Theme.DARK;
     setTheme(isCurrentDark ? Theme.LIGHT : Theme.DARK);
-    localStorage.setItem('default-theme', isCurrentDark ? Theme.LIGHT : Theme.DARK);
+    localStorage.setItem('default-theme', theme);
   };
 
   return <div className="toggle-btn-section">

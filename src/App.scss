@@ -5,3 +5,13 @@
 .App {
   height: 100%;
 }
+
+.required {
+  color: $supportive-red-00;
+  font-size: 16px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}

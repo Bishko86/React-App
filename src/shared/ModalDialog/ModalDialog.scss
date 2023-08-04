@@ -1,0 +1,41 @@
+.modal {
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__view {
+      display: block;
+      background: white;
+      width: 70%;
+      height: 70%;
+      padding: 1rem;
+      border-radius: 1rem;
+    }
+
+    &__header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 15px;
+
+      &:has(.modal__title) {
+        justify-content: space-between;
+      }
+    }
+
+    &__title {
+      margin-top: 0;
+    }
+
+    &__content {
+      display: flex;
+      justify-content: center;
+    } 
+  }
+  

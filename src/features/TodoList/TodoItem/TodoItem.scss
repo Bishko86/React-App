@@ -1,0 +1,51 @@
+@import 'styles/variables/colors';
+
+.todo {
+  &__item {
+    display: flex;
+    column-gap: 24px;
+  }
+
+  &__task {
+    width: 40%;
+  }
+
+  &__task__done {
+    text-decoration: line-through;
+  }
+
+  &__due-date,
+  &__created-at {
+    width: 25%;
+  }
+
+  &__delete {
+    cursor: pointer;
+    color: $supportive-red-00;
+  }
+
+  &__expired {
+    position: relative;
+    color: $supportive-red-00;
+
+    &:hover {
+      &::after {
+        content: 'expired';
+        color: $secondary-dark-blue-30;
+        position: absolute;
+        top: -20px;
+        left: 80px;
+        background-color: black;
+        padding: 2px 10px 4px;
+        border-radius: 3px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__edit {
+    padding-top: 3px;
+    color: $secondary-dark-blue-10;
+    cursor: pointer;
+  }
+}

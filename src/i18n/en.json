@@ -1,9 +1,22 @@
 {
   "descartes-square": "Descartes Square",
-  "to-do": "ToDo List",
+  "todo": {
+    "todo": "Todo List",
+    "empty-list": "There are no records to display yet",
+    "add-todo": "Add Todo",
+    "text": "Todo Text",
+    "due-date": "Due Date",
+    "save": "Save",
+    "header": "Todo",
+    "createdAt": "Created at"
+  },
+  "common": {
+    "no-data": "No data"
+  },
   "settings": "Settings",
   "welcome": "Welcome to my app",
   "hello": "Hello, {{name}}!",
   "en": "English",
-  "ua": "Ukrainian"
+  "ua": "Ukrainian",
+  "required": "Field is required"
 }
